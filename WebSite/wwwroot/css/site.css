@@ -1,0 +1,282 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+.devider-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: black; 
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 4 / 3; /* Пропорції 4:3 */
+}
+
+
+.devider-text::before,
+.devider-text::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #555; 
+    margin: 0 10px; 
+}
+
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.textarea {
+    overflow: hidden;
+    resize: none;
+}
+
+/*.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+*/
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+
+
+header {
+    background: url('/images/background/background.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: bottom; 
+    transition: height 0.4s ease-in-out; 
+    height: 72px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
+body {
+    padding-top: 72px; /* Якщо висота вашого хедера 70px */
+}
+
+
+
+
+
+.background {
+    background: url('/images/background/background.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: bottom;
+    transition: height 0.4s ease-in-out;
+}
+
+.background2 {
+    background: url('/images/background/background2.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: top;
+    transition: height 0.4s ease-in-out;
+}
+
+    
+
+/*.badge {
+    background-color: rgba(189, 116, 24, 0.6);
+    color: white;
+}
+
+.text-warning {
+    color: #BD7418 !important;
+}
+
+.text-secondary {
+    color: #425F4B !important;
+}
+
+.text-primary {
+    color: #192E2F !important;
+}
+
+.text-success {
+    color: #4b7147 !important;
+}*/
+
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+    background-color: #ccb78f !important;
+}
+
+.btn-primary{
+    background-color: darkblue !important;
+}
+
+.btn-primary:hover, .btn-primary:active {
+    background-color: blue !important
+}
+
+.btn-outline-primary {
+border-color: darkblue !important;
+color: darkblue !important; 
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:focus {
+    background-color: darkblue !important;
+    color: white !important; /* Коли кнопка в активному або hover стані, колір тексту білий */
+    border-color: darkblue !important;
+}
+
+
+.bg-primary {
+    background-color: #D9C49C !important;
+}
+
+.bg-secondary {
+    background-color: darkblue !important;
+}
+
+/*.bg-secondary {
+    background-color: #d1b073 !important;
+}
+
+.btn-secondary {
+    background-color: #d1b073 !important;
+}*/
+
+/*bg-success {
+    background-color: #4b7147 !important;
+}
+
+
+
+.card {
+    border-color: #425F4B !important;
+}
+*/
+
+
+/* Сайдбар */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+    background: linear-gradient(135deg, #222, #444);
+    color: white;
+    transition: left 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    padding-top: 60px;
+    z-index: 1000;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+    #sidebar.active {
+        left: 0;
+    }
+
+/* Оверлей */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 999;
+}
+
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+/* Кнопка закриття */
+#closeSidebar {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+    #closeSidebar:hover {
+            opacity: 1;
+    }
+
+/* Гамбургер-меню */
+.hamburger {
+    top: 10px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: opacity 0.3s ease-in-out;
+}
+
+    .hamburger.hidden {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Розтягує меню на всю висоту екрану */
+    background-color: #151414; /* Колір фону */
+    padding: 20px;
+}
+
+.nav {
+    flex-grow: 1; /* Займає доступний простір, щоб контактна інформація пішла вниз */
+}
+
+.sidebar-footer {
+    margin-top: auto; /* Завжди тримає блок внизу */
+}

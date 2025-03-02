@@ -1,0 +1,103 @@
+﻿<html lang="uk">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+<style>
+    .hero {
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+
+    .feature-box {
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .feature-box:hover {
+            transform: scale(1.05);
+        }
+</style>
+</head>
+<body>
+    <section class="hero text-center bg-white text-bg-dark" style="background-image: url('/images/AboutPhotos/5.jpg'); background-size: cover; background-position: center center; background-attachment: fixed;">
+        <div class="container animate__animated animate__fadeInDown">
+            <h1 class="display-3 fw-bold text-dark">Dekorační povrchy</h1>
+            <p class="lead text-dark">V naší nabídce najdete široký výběr unikátních a trendových povrchů.</p>
+            <div class="mb-3">
+                <a href="#about" class="btn btn-light btn-lg">Více informací</a>
+            </div>
+
+            <div>
+                <a asp-area="Customer" asp-controller="Home" asp-action="Index" class="btn btn  -primary text-uppercase"><small>Products</small></a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="/images/AboutPhotos/4.jpg" class="img-fluid rounded shadow animate__animated animate__fadeInLeft animate__slow" alt="Materiály pro interiér">
+                </div>
+                <div class="col-md-6">
+                    <h2 class="fw-bold animate__animated animate__fadeInRight animate__slow">O nás</h2>
+                    <p class="animate__animated animate__fadeInUp animate__delay-1s">Specializujeme se na prodej kvalitních materiálů pro interiérové a fasádní úpravy. Naše produkty spojují estetiku, dlouhověkost a funkčnost.</p>
+                    <p class="animate__animated animate__fadeInUp animate__delay-2s">Naším cílem je pomoci vám vytvořit jedinečné a útulné prostory, které odpovídají vašim potřebám.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Proč si nás zákazníci vybírají?</h2>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4 feature-box animate__animated animate__zoomIn">
+                    <i class="bi bi-bricks display-4 text-primary"></i>
+                    <h4 class="mt-3">Kvalita materiálů</h4>
+                    <p>Navrhujeme pouze ověřené a certifikované materiály pro interiérová a fasádní řešení.</p>
+                </div>
+                <div class="col-md-4 feature-box animate__animated animate__zoomIn" data-aos-delay="200">
+                    <i class="bi bi-hand-thumbs-up display-4 text-primary"></i>
+                    <h4 class="mt-3">Profesionální konzultace</h4>
+                    <p>Naši experti vám pomohou vybrat ideální materiály pro jakýkoli projekt.</p>
+                </div>
+                <div class="col-md-4 feature-box animate__animated animate__zoomIn" data-aos-delay="400">
+                    <i class="bi bi-truck display-4 text-primary"></i>
+                    <h4 class="mt-3">Rychlé doručení</h4>
+                    <p>Rychlé a spolehlivé doručení po celé zemi, aby vaše projekty nebyly zpožděny.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold animate__animated animate__fadeInDown">Naše realizované projekty</h2>
+            <p class="text-muted animate__animated animate__fadeInDown animate__delay-1s">Prohlédněte si naše nejlepší práce</p>
+            <div class="row mt-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <img src="/images/AboutPhotos/1.jpg" class="img-fluid rounded shadow" alt="projekt 1">
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <img src="/images/AboutPhotos/2.jpg" class="img-fluid rounded shadow" alt="projekt 2">
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <img src="/images/AboutPhotos/3.jpg" class="img-fluid rounded shadow" alt="projekt 3">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

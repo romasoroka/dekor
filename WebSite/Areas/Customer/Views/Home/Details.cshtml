@@ -1,0 +1,67 @@
+﻿@model ShoppingCart
+
+
+<form method="post">
+    <input hidden asp-for="ProductId" /> 
+    <div class="card shadow border-0 mt-4">
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header bg-primary bg-gradient text-light py-4">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3 class="text-white text-uppercase">@Model.Product.Name</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="py-3">
+                    <div class="row">
+                        <!-- Зображення -->
+                        <div class="col-12 col-lg-3 offset-lg-1 text-center mb-3">
+                            <img src="@Model.Product.ImageURL" class="img-fluid rounded shadow-sm hover-zoom" alt="@Model.Product.Name" />
+                        </div>
+
+                        <div class="col-12 col-lg-6 offset-lg-1">
+                            <div class="col-12 col-md-6 pb-4">
+                                <span class="badge bg-secondary text-uppercase">@Model.Product.Category.Name</span>
+                            </div>
+
+                            <div class="row ps-2">
+                                <h6 class="text-dark pb-2">
+                                    Cena:
+                                    <span class="fw-bold">
+                                        @Model.Product.Price.ToString("C", new System.Globalization.CultureInfo("cs-CZ"))
+                                    </span>
+                                </h6>
+                                <h6 class="text-dark pb-2">
+                                    Hmotnost:
+                                    <span class="fw-bold">
+                                        @Model.Product.Weight.ToString() kg
+                                    </span>
+                                </h6>
+                            </div>
+
+                            <div class="row pl-2 my-3">
+                                <p class="text-secondary lh-sm">@Html.Raw(Model.Product.Description)</p>
+                            </div>
+
+                            <div class="row">
+                                <!-- Кнопки -->
+                                <div class="col-6 pb-1">
+                                    <button type="submit" class="btn btn-primary w-100 py-2 text-uppercase fw-semibold shadow-sm hover-zoom">
+                                        Přidat do košíku
+                                    </button>
+                                </div>
+                                <div class="col-6 pb-1">
+                                    <a asp-action="Index" class="btn btn-outline-primary w-100 py-2 fw-semibold text-uppercase hover-zoom">
+                                        Zpět na domovskou stránку
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
