@@ -76,6 +76,15 @@ namespace WebSite.Areas.Admin.Controllers
                 }
                 else
                 {
+                    var productToChange = _unitOfWork.Product.Get(u => u.Id == obj.Product.Id);
+                    if (productToChange.ImageURL != null)
+                    {
+                        var oldPath = Path.Combine(_webHostEnvironment.WebRootPath, productToChange.ImageURL.TrimStart('\\'));
+                        if (System.IO.File.Exists(oldPath))
+                        {
+                            System.IO.File.Delete(oldPath);
+                        }
+                    }
                     _unitOfWork.Product.Update(obj.Product);
                 }
                 _unitOfWork.Save();

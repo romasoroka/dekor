@@ -280,3 +280,40 @@ color: darkblue !important;
 .sidebar-footer {
     margin-top: auto; /* Завжди тримає блок внизу */
 }
+
+
+@media (max-width: 576px) { /* Для мобільних пристроїв */
+
+    header {
+        height: 60px;
+    }
+
+    .search-form {
+        max-width: 300px; /* Зменшуємо ширину пошуку */
+    }
+
+    .search-input {
+        padding-left: 10px; /* Менший відступ */
+        padding-right: 35px;
+        font-size: 14px; /* Менший шрифт */
+    }
+
+    .search-btn {
+        right: 5px; /* Коригуємо позицію кнопки */
+        font-size: 16px; /* Зменшуємо іконку */
+    }
+
+    .btn-telephone {
+        display: none; /* Ховаємо кнопку "Objednat hovor" */
+    }
+
+    .btn-telephone-icon {
+        display: inline-flex !important; /* Лишаємо тільки іконку */
+    }
+
+    .bi-cart3 {
+        font-size: 1.5rem !important; /* Зменшуємо іконку кошика */
+    }
+}
+
+

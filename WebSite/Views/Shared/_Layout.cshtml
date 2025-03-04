@@ -22,33 +22,36 @@
     <div class="overlay" id="overlay"></div>
 
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <div class="navbar-collapse collapse d-flex justify-content-between align-items-center">
 
+                    <!-- Бургер-меню -->
                     <div class="d-flex">
                         <button class="hamburger btn btn-dark d-flex align-items-center justify-content-center p-3" id="menuToggle">
                             <i class="bi bi-list fs-2"></i>
                         </button>
-
                     </div>
 
-                    <form class="search-form d-flex mx-auto position-relative">
-                        <input class="form-control search-input ps-4 pe-5" type="search" placeholder="Vyhledávání produktů..." aria-label="Search">
+                    <!-- Пошуковий рядок -->
+                    <form class="search-form d-flex mx-auto position-relative" action="@Url.Action("Search", "Home")" method="post">
+                        <input class="form-control search-input ps-4 pe-5" type="search" name="searchQuery" placeholder="Vyhledávání produktů..." aria-label="Search">
                         <button class="btn search-btn position-absolute end-0 top-50 translate-middle-y me-2" type="submit">
                             <i class="bi bi-search"></i>
                         </button>
                     </form>
 
 
+                    <!-- Іконки: дзвінок, кошик, профіль -->
                     <div class="d-flex align-items-center">
 
-                        <button type="button" class="btn btn-transparent text-white fs-5 border-0 me-3"
+                        <!-- Іконка дзвінка -->
+                        <button type="button" class="btn btn-transparent text-white fs-5 border-0 me-3 btn-telephone-icon"
                                 data-bs-toggle="modal" data-bs-target="#callRequestModal">
                             <i class="bi bi-telephone-outbound"></i>
-                            Objednat hovor
                         </button>
 
+                        <!-- Кошик -->
                         <a class="nav-link text-white d-flex align-items-center me-3" asp-area="Customer" asp-controller="Cart" asp-action="Index">
                             <i class="bi bi-cart3 fs-3"></i>
                         </a>
@@ -60,10 +63,9 @@
 
                 </div>
             </div>
-
         </nav>
-   
     </header>
+
     <div class="container">
         <main role="main" class="mb-5">
             <partial name="_Notification" />
@@ -79,23 +81,21 @@
         </button>
 
         <ul class="nav flex-column">
-            <li><a class="nav-link text-white" asp-area="Customer" asp-controller="Home" asp-action="Index">Hlavní stránka</a></li>
-            <li><a class="nav-link text-white" asp-area="Customer" asp-controller="Home" asp-action="About">O nás</a></li>
-            <li><a class="nav-link text-white" asp-area="Admin" asp-controller="Category" asp-action="Index">Kategorie (admin)</a></li>
-            <li><a class="nav-link text-white" asp-area="Admin" asp-controller="Product" asp-action="Index">Zboží (admin)</a></li>
+            <li><a class="nav-link text-white fs-sm-5" asp-area="Customer" asp-controller="Home" asp-action="Index">Hlavní stránka</a></li>
+            <li><a class="nav-link text-white fs-sm-5" asp-area="Customer" asp-controller="Home" asp-action="About">O nás</a></li>
+            <li><a class="nav-link text-white fs-sm-5" asp-area="Customer" asp-controller="Home" asp-action="Gallery">Galerie</a></li>
+            <li><a class="nav-link text-white fs-sm-5" asp-area="Admin" asp-controller="Category" asp-action="Index">Kategorie (admin)</a></li>
+            <li><a class="nav-link text-white fs-sm-5" asp-area="Admin" asp-controller="Product" asp-action="Index">Zboží (admin)</a></li>
         </ul>
 
         <!-- Контактна інформація внизу -->
         <div class="sidebar-footer text-white text-center py-3">
-            <div class="mb-2"><i class="bi bi-geo-alt-fill"></i> Praha, Mnišek pod Brdy Rude Armady 555</div>
-            <div class="mb-2"><i class="bi bi-telephone-fill"></i> +420 773 023 829</div>
-            <div>
-                <a href="https://facebook.com" class="text-white" target="_blank">
-                    <i class="bi bi-facebook fs-4"></i>
-                </a>
-            </div>
+            <div class="mb-2 fs-sm-6"><i class="bi bi-geo-alt-fill"></i> Praha, Mnišek pod Brdy Rude Armady 555</div>
+            <div class="mb-2 fs-sm-6"><i class="bi bi-telephone-fill"></i> +420 773 023 829</div>
         </div>
     </nav>
+
+
 
     
     <!-- Оверлей (затемнення фону при відкритому меню) -->
@@ -118,7 +118,9 @@
                             <label for="clientName" class="form-label fw-bold">
                                 Jméno
                             </label>
-                            <input type="text" class="form-control rounded-3 shadow-sm" id="clientName" placeholder="Zadejte své jméno" required>
+                            <input type="text" class="form-control rounded-3 shadow-sm"
+                                   id="clientName" placeholder="Zadejte své jméno"
+                                   value="@ViewBag.UserName" required>
                         </div>
                         <div class="mb-3">
                             <label for="clientPhone" class="form-label fw-bold">Telefon</label>
@@ -142,7 +144,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://cdn.tiny.cloud/1/dgsj2y3y3a7298erhgwpp6ewazwjzj8nc669vlrpces2orx4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/dgsj2y3y3a7298erhgwpp6ewazwjzj8nc669vlrpces2orx4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="//cdn.datatables.net/2.2.1/js/dataTables.min.js" asp-append-version="true"></script>
     <script src="//cdn.datatables.net/2.2.1/js/dataTables.min.js" referrerpolicy="origin"></script>
